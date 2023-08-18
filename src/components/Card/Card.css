@@ -1,6 +1,7 @@
 .card-container {
   width: 40%;
   min-width: 25rem;
+  max-width: 30rem;
 }
 
 header {
@@ -53,4 +54,26 @@ h1 {
   box-shadow: 0px 2px 4px 0px rgba(252, 168, 47, 0.4);
 
   padding: 1rem 2.25rem;
+}
+
+@media (max-width: 700px) {
+  .card-container {
+    min-width: 20rem;
+  }
+
+  header {
+    top: 0rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .quiz-img {
+    width: 7rem;
+  }
+
+  .card {
+    padding: 1rem 1rem 2rem;
+  }
 }
