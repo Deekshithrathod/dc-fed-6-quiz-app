@@ -10,7 +10,6 @@ export interface IQuestion {
 
 const Question = ({ type, question, flagURL }: IQuestion) => {
   const [url, setUrl] = useState("");
-  // let url = "";
   useEffect(() => {
     (async () => {
       const u = await asyncGetFlagURL(flagURL || "Germarny");

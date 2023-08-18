@@ -5,8 +5,6 @@ import Results from "../Results/Results";
 import "./Card.css";
 import { currQuestion, currQuestionIndex } from "../../atoms/quiz";
 import { IUserAnswer, userAnswers } from "../../atoms/userAnswers";
-import { useEffect } from "react";
-import { asyncGetFlagURL } from "../../utils/flagUrl";
 
 const Card = () => {
   const details = useRecoilValue(currQuestion);
@@ -90,9 +88,6 @@ const Card = () => {
       </header>
       <div className="card" onClick={handleClick}>
         <Display />
-        {/* <Question type="flag" text="Kuala Lumpur is the capital of" /> */}
-        {/* <Options options={options} /> */}
-        {/* <Results /> */}
       </div>
     </div>
   );
