@@ -21,13 +21,25 @@
   border: 2px solid #f9a826;
 }
 
-.wrong {
+.selected.wrong {
+  color: white;
+  background-color: #ea8282;
+  border: 2px solid #ea8282;
+}
+
+.selected.wrong:hover {
   color: white;
   background-color: #ea8282;
   border: 2px solid #ea8282;
 }
 
 .correct {
+  color: white;
+  background-color: #60bf88;
+  border: 2px solid #60bf88;
+}
+
+.correct:hover {
   color: white;
   background-color: #60bf88;
   border: 2px solid #60bf88;

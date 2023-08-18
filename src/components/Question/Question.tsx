@@ -1,35 +1,32 @@
+import { useEffect, useState } from "react";
 import "./Question.css";
+import { asyncGetFlagURL } from "../../utils/flagUrl";
 
-interface IQuestion {
+export interface IQuestion {
   type: "flag" | "plain";
-  text: string;
+  question: string;
+  flagURL?: string;
 }
 
-const Question = ({ type, text }: IQuestion) => {
+const Question = ({ type, question, flagURL }: IQuestion) => {
+  const [url, setUrl] = useState("");
+  // let url = "";
+  useEffect(() => {
+    (async () => {
+      const u = await asyncGetFlagURL(flagURL || "Germarny");
+      setUrl(u);
+    })();
+  }, []);
+
   return (
-    <div className="question">
-      {type === "plain" && <img src="https://flagcdn.com/w320/de.png" />}
-      <h4>{text}</h4>
-    </div>
+    <>
+      {type === "flag" && (
+        <div className="flag-container">
+          {url ? <img src={url} className="flag-img" /> : "..."}
+        </div>
+      )}
+      <h4>{question}</h4>
+    </>
   );
 };
 export default Question;
-
-{
-  /* <div className="question-card">
-          <div className="answers">
-            <div className="answer">
-              <span>A</span> Vietnam
-            </div>
-            <div className="answer">
-              <span>A</span> Vietnam
-            </div>
-            <div className="answer">
-              <span>A</span> Vietnam
-            </div>
-            <div className="answer">
-              <span>A</span> Vietnam
-            </div>
-          </div>
-        </div> */
-}

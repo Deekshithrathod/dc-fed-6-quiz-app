@@ -1,13 +1,14 @@
 import "./Option.css";
 
+export type index = "A" | "B" | "C" | "D";
 export interface IOption {
-  index: "A" | "B" | "C" | "D";
+  index: index;
   value: string;
 }
 
 const Option = ({ index, value }: IOption) => {
   return (
-    <div className="option">
+    <div className="option" data-val={value}>
       <span className="index">{index}</span>
       {value}
     </div>
